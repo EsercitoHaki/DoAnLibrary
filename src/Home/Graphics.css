@@ -1,0 +1,65 @@
+.side_anchorpane {
+    /*-fx-background-color: #EFEFEF;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;*/
+}
+
+.button_Dashboard {
+    -fx-background-color: #564AF7;
+        -fx-border-color: #564AF7;
+        -fx-border-width: 2px 2px 2px 2px;
+        -fx-border-radius: 50px;
+        -fx-background-radius: 50px;
+        -fx-border-style: solid;
+}
+
+.button_Books {
+    -fx-background-color: #564AF7;
+    -fx-border-color: #564AF7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+
+.button_Search {
+    -fx-background-color: #564AF7;
+    -fx-border-color: #564AF7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+
+.button_Profile {
+    -fx-background-color: #564AF7;
+    -fx-border-color: #564AF7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+
+.button_Setting {
+    -fx-background-color: #564AF7;
+    -fx-border-color: #564AF7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+
+.color_Pane1 {
+    -fx-border-color: #564AF7;
+}
+
+.color_Pane2 {
+    -fx-border-color: #564AF7;
+}
+
+.color_Pane3 {
+    -fx-border-color: #564AF7;
+}
