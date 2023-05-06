@@ -63,3 +63,11 @@
 .color_Pane3 {
     -fx-border-color: #564AF7;
 }
+
+.button_LogOut {
+    -fx-background-color: #564AF7;
+    -fx-border-color: #564AF7;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-border-style: solid;
+}
