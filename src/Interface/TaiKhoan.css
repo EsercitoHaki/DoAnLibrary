@@ -1,0 +1,16 @@
+.body_mid{
+    -fx-backGround-color: linear-gradient(from 0% 0% to 70% 100%, #0277BD, #9C27B0);
+}
+
+.body_right{
+    -fx-backGround-color: #1C1C1C;
+}
+
+.buttonHS{
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 50%, rgba(25, 118, 210, 0.5), rgba(81, 45, 168, 0.5));
+    -fx-border-color: linear-gradient(from 0% 0% to 100% 50%, rgba(25, 118, 210, 0.5), rgba(81, 45, 168, 0.5));
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}

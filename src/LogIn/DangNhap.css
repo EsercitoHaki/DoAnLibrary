@@ -71,3 +71,27 @@
     -fx-border-radius: 50px;
     -fx-border-style: solid;
 }
+
+.body{
+    -fx-backGround-color: linear-gradient(from 0% 0% to 70% 100%, #0277BD, #9C27B0);
+}
+
+.body_mid{
+    -fx-backGround-color: rgba(255, 255, 255, .15);
+    -fx-border-color: linear-gradient(from 0% 0% to 100% 50%, rgba(25, 118, 210, 0.5), rgba(81, 45, 168, 0.5));
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-style: solid;
+}
+
+.button{
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 50%, rgba(25, 118, 210, 0.5), rgba(81, 45, 168, 0.5));
+    -fx-border-color: linear-gradient(from 0% 0% to 100% 50%, rgba(25, 118, 210, 0.5), rgba(81, 45, 168, 0.5));
+    -fx-border-width: 1px 1px 1px 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-border-style: solid;
+}
+
+

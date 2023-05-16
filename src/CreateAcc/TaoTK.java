@@ -1,4 +1,4 @@
-package Home;
+package test;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +19,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
-public class create_user {
+public class TaoTK {
     @FXML
     private Label MessageSignUp;
 
@@ -67,7 +67,7 @@ public class create_user {
 
     public void strartLogin(){
         try{
-            Parent root = FXMLLoader.load((getClass().getResource("DangNhap.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("DangNhap/DangNhap.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setMaximized(false);
@@ -88,7 +88,7 @@ public class create_user {
         try{
             Stage stagePast = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stagePast.close();
-            Parent root = FXMLLoader.load((getClass().getResource("DangNhap.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("DangNhap/DangNhap.fxml")));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setMaximized(false);

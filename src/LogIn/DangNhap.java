@@ -1,8 +1,6 @@
-package Home;
+package Home.LogIn;
 
-import Home.Main;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -23,7 +20,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 
-public class controller implements Initializable {
+
+public class DangNhap implements Initializable {
 
     @FXML
     private Button Login;
@@ -68,6 +66,13 @@ public class controller implements Initializable {
     @FXML
     private AnchorPane side_anchorpane;
 
+    @FXML
+    private JFXButton LogOut;
+
+    @FXML
+    private Button SignUp;
+
+
     private boolean isFieldFilled()
     {
         boolean isField = true;
@@ -90,31 +95,55 @@ public class controller implements Initializable {
         return isField;
     }
 
-    private boolean isValid(){
-        boolean isValid = true;
-        if (!UserName.getText().equals(Main.USERNAME)){
-            isValid = false;
-            errorMessage = "Invalid Username!";
-        }
+//    private boolean isValid(){
+//        boolean isValid = true;
+//        if (!UserName.getText().equals(Main.USERNAMETEST)){
+//            isValid = false;
+//            errorMessage = "Invalid Username!";
+//        }
+//
+//        if (!Password.getText().equals(Main.PASSWORDTEST)){
+//            isValid = false;
+//            if (errorMessage.isEmpty())
+//            {
+//                errorMessage = "Invalid Password!";
+//            }else {
+//                errorMessage += "\nInvalid Password";
+//            }
+//        }
+//
+//        errorMessageLabel.setText(errorMessage);
+//        return isValid;
+//    }
 
-        if (!Password.getText().equals(Main.PASSWORD)){
-            isValid = false;
-            if (errorMessage.isEmpty())
-            {
-                errorMessage = "Invalid Password!";
-            }else {
-                errorMessage += "\nInvalid Password";
-            }
-        }
+//    public void ClickLogin(ActionEvent event){
+//        try(Connection connection = DriverManager.getConnection(DATABASEURL, USERNAME, PASSWORD)){
+//            String username = UserName.getText();
+//            String password = Password.getText();
+//
+//            String query = "SELECT * FROM user WHERE username = ? AND password = ?";
+//            PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, username);
+//            statement.setString(2, password);
+//            ResultSet resultSet = statement.executeQuery();
+//
+//            if(resultSet.next()){
+//                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//                stage.close();
+//                starHomeWindow();
+//            }else {
+//
+//            }
+//
+//        }catch (SQLException e){
+//            throw new RuntimeException(e);
+//        }
+//    }
 
-        errorMessageLabel.setText(errorMessage);
-        return isValid;
-    }
 
-
-    private void starHomeWindow(){
+    public void starHomeWindow(){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Interface.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setResizable(false);
@@ -125,11 +154,37 @@ public class controller implements Initializable {
         }
     }
 
-    private void startCreate(){
+    public void startCreate(){
         try{
-            Parent root = FXMLLoader.load((getClass().getResource("Create.fxml")));
+            Parent root = FXMLLoader.load((getClass().getResource("DangNhap/TaoTK.fxml")));
             Stage stage = new Stage();
             stage.setMaximized(true);
+            stage.setScene(new Scene(root));
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void startSetting(){
+        try {
+            Parent root = FXMLLoader.load((getClass().getResource("CaiDat.fxml")));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.setMaximized(false);
+            stage.setResizable(false);
+            stage.show();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void strartLogin(){
+        try{
+            Parent root = FXMLLoader.load((getClass().getResource("DangNhap/DangNhap.fxml")));
+            Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setMaximized(false);
             stage.setResizable(false);
@@ -159,15 +214,17 @@ public class controller implements Initializable {
 
 
     }
-    @FXML
-    private void ClickLogin(ActionEvent event){
-        if (isFieldFilled() && isValid()){
-            starHomeWindow();
-        }
-    }
+//    @FXML
+//    public void ClickLogin(ActionEvent event){
+//        if (isFieldFilled() && isValid()){
+//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            stage.close();
+//            starHomeWindow();
+//        }
+//    }
 
     @FXML
-    private void handeClick(ActionEvent event){
+    public void handeClick(ActionEvent event){
         if (event.getSource() == buttonDashboard){
             displaylabel.setText("Dashboard");
             displaypane.setBackground(new Background(new BackgroundFill(Color.rgb(63, 43, 99), CornerRadii.EMPTY, Insets.EMPTY)));
@@ -186,10 +243,22 @@ public class controller implements Initializable {
 
         }else
         if (event.getSource() == buttonSetting){
-            displaylabel.setText("Setting");
-            displaypane.setBackground(new Background(new BackgroundFill(Color.rgb(240, 130, 172), CornerRadii.EMPTY, Insets.EMPTY)));
-
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            startSetting();
         }
     }
+
+
+
+    @FXML
+    public void ClickLogOut(ActionEvent event){
+        if(event.getSource() == LogOut){
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+            strartLogin();
+        }
+    }
+
 
 }
